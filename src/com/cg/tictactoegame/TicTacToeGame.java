@@ -22,7 +22,7 @@ public class TicTacToeGame {
 			board[i] = ' ';
 
 	}
-	
+
 	public static void showBoard(char[] board) {
 		System.out.println("\tBOARD FORMAT");
 		System.out.println("\t  " + board[1] + "| " + board[2] + " | " + board[3] + "\n\t-----------");
@@ -30,6 +30,14 @@ public class TicTacToeGame {
 		System.out.println("\t  " + board[7] + "| " + board[8] + " | " + board[9]);
 	}
 
-
-
+	public static boolean playerMove(char player, char[] board, Scanner input) {
+		System.out.println("Enter the position player want to move(1-9)");
+		int pos = input.nextInt();
+		if (board[pos] == ' ') {
+			board[pos] = player;
+			showBoard(board);
+		} else
+			System.out.println("Place is occupied");
+		return playerMove(player, board, input);
+	}
 }
