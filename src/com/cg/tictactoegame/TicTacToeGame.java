@@ -6,7 +6,8 @@ public class TicTacToeGame {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		char[] board = new char[10];
-
+   
+		while(true){
 		System.out.println("WELCOME TO TIC-TAC-TOE");
 		assignBlankSpace(board);
 		showBoard(board);
@@ -15,6 +16,11 @@ public class TicTacToeGame {
 		char computer = (player == 'X' ? 'O' : 'X');
 		System.out.println("Player choice: " + player + "\nComputer choice: " + computer);
 		toss(player, computer, board, input);
+		System.out.println("Do you want to play another game(y/n):");
+		char ch=input.next().charAt(0);
+		if(ch!='y')
+			break;
+		}
 	}
 
 	public static void assignBlankSpace(char[] board) {
