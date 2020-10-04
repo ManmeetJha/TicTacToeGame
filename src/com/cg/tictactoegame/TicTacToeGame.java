@@ -14,6 +14,7 @@ public class TicTacToeGame {
 		char player = Character.toUpperCase(input.next().charAt(0));
 		char computer = (player == 'X' ? 'O' : 'X');
 		System.out.println("Player choice: " + player + "\nComputer choice: " + computer);
+		toss(player, computer, board, input);
 	}
 
 	public static void assignBlankSpace(char[] board) {
@@ -39,5 +40,18 @@ public class TicTacToeGame {
 		} else
 			System.out.println("Place is occupied");
 		return playerMove(player, board, input);
+	}
+	
+	public static void toss(char player, char computer, char[] board, Scanner input) {
+		int HEAD = 1;
+		double toss = Math.floor(Math.random() * 10) % 2;
+		if (toss == HEAD) {
+			System.out.println("Player will make the first move");
+		
+		} else {
+			System.out.println("Computer will make the first move");
+	
+		}
+
 	}
 }
