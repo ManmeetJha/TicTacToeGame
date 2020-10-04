@@ -149,6 +149,16 @@ public class TicTacToeGame {
 			else if (board[5] == ' ')
 				return 5;
 		}
+		if (check == 0) {
+			if (board[2] == ' ')
+				return 2;
+			else if (board[4] == ' ')
+				return 4;
+			else if (board[6] == ' ')
+				return 6;
+			else if (board[8] == ' ')
+				return 8;
+		}
 	
 		return check;
 	}
