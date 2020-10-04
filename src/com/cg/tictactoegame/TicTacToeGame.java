@@ -9,6 +9,11 @@ public class TicTacToeGame {
 
 		System.out.println("WELCOME TO TIC-TAC-TOE");
 		assignBlankSpace(board);
+		
+		System.out.println("Player:Enter the choice(X | O)");
+		char player = Character.toUpperCase(input.next().charAt(0));
+		char computer = (player == 'X' ? 'O' : 'X');
+		System.out.println("Player choice: " + player + "\nComputer choice: " + computer);
 	}
 
 	public static void assignBlankSpace(char[] board) {
